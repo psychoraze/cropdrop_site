@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %} {% block content %}
+<div class="success-message">
+  <h2>Ваше сообщение успешно отправлено!</h2>
+  <p>
+    Вы будете перенаправлены на страницу контактного центра через
+    <span id="timer">7</span> секунд.
+  </p>
+</div>
+
+<script>
+  let countdown = 7;
+  const timerElement = document.getElementById("timer");
+
+  function updateTimer() {
+    if (countdown > 0) {
+      countdown--;
+      timerElement.textContent = countdown;
+    } else {
+      window.location.href = "{% url 'contact' %}";
+    }
+  }
+
+  setInterval(updateTimer, 1000);
+</script>
+{% endblock %}

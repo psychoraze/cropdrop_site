@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %} {% load static %} {% block title %}Связь с
+контакт центром{% endblock %} {% block content %}
+<div class="contact-form">
+  <h1>Связь с контакт центром CropDrop</h1>
+  <form method="POST">
+    {% csrf_token %}
+
+    <label for="category">Категория сообщения:</label>
+    <select id="category" name="category" required>
+      <option value="">-- Выберите категорию --</option>
+      <option value="Пожелание">Пожелание</option>
+      <option value="Жалоба">Жалоба</option>
+      <option value="Другое">Другое</option>
+    </select>
+
+    {{ form.as_p }}
+
+    <button type="submit" class="send-button">Отправить заявку</button>
+  </form>
+  <p>Мы свяжемся с вами как можно скорее.</p>
+</div>
+{% if messages %}
+<div class="messages">
+  {% for message in messages %}
+  <div class="alert">{{ message }}</div>
+  {% endfor %}
+</div>
+{% endif %} {% endblock %}

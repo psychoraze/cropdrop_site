@@ -1,0 +1,541 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    padding: 10px 0;
+    color: #2f4f4f; 
+}
+
+/* Стили для видео на задний фон */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;  /* Помещаем видео на задний план */
+    overflow: hidden;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Видео будет покрывать весь экран */
+}
+
+/* Наложение полупрозрачного фона */
+.content-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Центрирование контента */
+    text-align: center;
+    color: white;  /* Цвет текста поверх видео */
+    z-index: 1;
+}
+
+.box-big{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 350px;
+}
+
+/* Добавление кнопок */
+.buttons {
+    display: flex;
+    justify-content: center; /* Центрирование кнопок по горизонтали */
+    gap: 20px; /* Расстояние между кнопками */
+}
+
+
+.btn {
+    background-color: #006400;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #004d00;
+}
+
+.video-background video {
+    filter: brightness(40%);
+}
+
+
+blockquote {
+    font-style: italic;
+    color: #333;
+    border-left: 4px solid #006400;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+header {
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.crop {
+    color: lightgreen;
+}
+
+.drop {
+    color: rgb(0, 119, 255);
+}
+
+.cropSide {
+    color: white;
+}
+
+.dropSide {
+    color: white;
+}
+
+.button-section {
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+}
+
+.button {
+    padding: 15px 30px;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: #228B22; /* чуть темнее зеленый */
+    transform: scale(1.05);
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 240px;
+    background: linear-gradient(180deg, #006400, #228B22);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 3px 0 15px rgba(0, 0, 0, 0.2);
+    min-height: 100vh;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    border-radius: 20px 0 0 20px;
+}
+
+.sidebar h1 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.sidebar-button {
+    color: white;
+    background-color: #2e8b57;
+    text-decoration: none;
+    padding: 14px 25px;
+    margin: 15px 0;
+    border-radius: 12px;
+    font-size: 18px;
+    text-align: center;
+    width: 80%;
+    font-weight: bold;
+    transition: background 0.4s, transform 0.3s;
+}
+
+.sidebar-button:hover {
+    background: #3cb371;
+    transform: translateX(5px);
+}
+
+.content {
+    flex: 1;
+    padding: 40px;
+    margin-left: 270px;
+    background-color: white;
+}
+
+.pipes-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.pipes-image {
+    width: 500px;
+    height: auto;
+}
+
+.flow-button {
+    padding: 20px 40px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.flow-button:hover {
+    background-color: #228B22;
+    transform: scale(1.05);
+}
+
+.humidity-table-section {
+    margin-top: 50px;
+}
+
+.table-wrapper {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #f0f0f0;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.contact-form {
+    background-color: #f9f9f9;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contact-form h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2e8b57;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.send-button {
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+}
+
+.send-button:hover {
+    background-color: #3cb371;
+    transform: scale(1.05);
+}
+
+.about-section {
+    margin-top: 30px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #006400;
+    margin-bottom: 20px;
+}
+
+.social-media-links ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.social-media-links ul li {
+    margin: 10px 0;
+}
+
+.social-link {
+    color: #006400;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.social-link:hover {
+    text-decoration: underline;
+}
+
+.project-goals ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Стили для секции "Наша команда" */
+.team-section {
+    margin-top: 40px;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #006400;
+}
+
+.team-section p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.team-member {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-member-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 15px;
+}
+
+.role {
+    font-size: 1.1rem;
+    color: #006400;
+    margin-top: 5px;
+}
+
+.contact {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.contact a {
+    color: #006400;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для системы сервоприводов */
+.servo-system {
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+/* Стиль для контейнера сервоприводов */
+.servos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* три колонки */
+    gap: 20px; /* расстояние между элементами */
+    justify-items: center; /* центрирование элементов */
+    margin-top: 20px;
+  }
+  
+  /* Стиль для каждого сервопривода */
+  .servo {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #006400;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: background-color 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .servo h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .servo p {
+    font-size: 1rem;
+  }
+  
+  .servo.active {
+    background-color: #90EE90; /* Зеленый для активного состояния */
+  }
+  
+  .servo.inactive {
+    background-color: #FF6347; /* Красный для неактивного состояния */
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* main/css/styles.css */
+
+/* Стиль для формы логина */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+}
+
+form input {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+form a {
+    text-align: center;
+    margin-top: 10px;
+    color: #007bff;
+}
+
+.login-container, .register-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.login-container h2, .register-container h2 {
+    margin-bottom: 20px;
+}
+
+.login-container form, .register-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container form input, .register-container form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button, .register-container button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover, .register-container button:hover {
+    background-color: #45a049;
+}

@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CropDrop</title>
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="box-big">
+      <header>
+        <h1><span class="crop">Crop</span><span class="drop">Drop</span></h1>
+      </header>
+
+      <div class="video-background">
+        <video autoplay muted loop id="background-video">
+          <source
+            src="{% static 'videos/background-video.mp4' %}"
+            type="video/mp4"
+          />
+          Ваш браузер не поддерживает видео.
+        </video>
+      </div>
+
+      <main class="button-section">
+        <a href="{% url 'pipes' %}" class="button">Система труб</a>
+        <a href="{% url 'contact' %}" class="button">Связь с контакт центром</a>
+        <a href="{% url 'about' %}" class="button">О проекте CropDrop</a>
+      </main>
+    </div>
+  </body>
+</html>

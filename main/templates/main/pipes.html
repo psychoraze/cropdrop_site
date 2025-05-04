@@ -1,0 +1,81 @@
+{% extends 'main/base.html' %} {% load static %} {% block title %}Система труб -
+CropDrop{% endblock %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Система Труб - CropDrop</title>
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Основной контент -->
+      <main class="content">
+        <div class="pipes-section">
+          <img
+            id="pipesImage"
+            src="{% static 'main/img/pipes_off.png' %}"
+            alt="Схема труб"
+            class="pipes-image"
+          />
+          <button id="toggleFlowButton" class="flow-button">
+            Включить поток воды везде
+          </button>
+        </div>
+
+        <div class="servo-system">
+          <h2>Система сервоприводов</h2>
+          <div class="servos">
+            <div class="servo" id="servo1">
+              <h3>Сервопривод 1</h3>
+              <p>Состояние: <span id="status1">Ожидание</span></p>
+            </div>
+            <div class="servo" id="servo2">
+              <h3>Сервопривод 2</h3>
+              <p>Состояние: <span id="status2">Ожидание</span></p>
+            </div>
+            <div class="servo" id="servo3">
+              <h3>Сервопривод 3</h3>
+              <p>Состояние: <span id="status3">Ожидание</span></p>
+            </div>
+            <div class="servo" id="servo4">
+              <h3>Сервопривод 4</h3>
+              <p>Состояние: <span id="status4">Ожидание</span></p>
+            </div>
+            <div class="servo" id="servo5">
+              <h3>Сервопривод 5</h3>
+              <p>Состояние: <span id="status5">Ожидание</span></p>
+            </div>
+            <div class="servo" id="servo6">
+              <h3>Сервопривод 6</h3>
+              <p>Состояние: <span id="status6">Ожидание</span></p>
+            </div>
+          </div>
+          <button onclick="simulateSignal()">Симулировать сигнал</button>
+        </div>
+
+        <div class="humidity-table-section">
+          <h2>Влажность труб</h2>
+          <div class="table-wrapper">
+            <table id="humidityTable">
+              <thead>
+                <tr>
+                  <th>Труба</th>
+                  <th>Влажность (%)</th>
+                  <th>Время</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Данные будут добавляться через JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="{% static 'main/js/pipes.js' %}" defer></script>
+  </body>
+</html>
+{% endblock %}
