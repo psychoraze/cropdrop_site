@@ -4,7 +4,7 @@ from channels.routing import ProtocolTypeRouter, URLRouter
 from channels.auth import AuthMiddlewareStack
 import cropdrop.routing
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "your_project.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cropdrop.settings")
 
 application = ProtocolTypeRouter(
     {
